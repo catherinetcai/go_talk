@@ -1,0 +1,143 @@
+Getting Going With Go
+Things I'd Wish Someone Had Taught Me About Go
+17 Aug 2017
+Tags: golang
+
+Catherine Cai
+Senior Systems Engineer, Fair
+catherinec@fair.com
+http://www.cathuselah.net
+@catherinetcai
+
+* Background
+- Systems engineer at a startup out in Santa Monica
+- Previously was a Rails/Java backend engineer
+- Background in Ruby and Java
+- Began using Go in production to build tooling around DC/OS (and now Kubernetes)
+.image images/gopher.png 300 400
+
+* What is Go?
+- Statically-typed language developed at Google
+- Go is meant to be fast and productive
+- "Simplicity is complicated" - Rob Pike
+- An OOP-ish language (more on this later)
+- Concurrency without the headaches
+
+* What This Talk is About/Not About
+- About: Pitfalls and things I ran into learning Go
+- Not about: Go evangelism or why Go is better than X language for Y purpose
+
+* Lay of the Tooling Land
+- $GOPATH and drawbacks
+- GoDocs are amazing [[https://godoc.org/fmt]] 
+.code code/godoc.go
+- Dependency management leaves a lot to be desired [[https://github.com/kardianos/govendor]]
+- gofmt will format your Go code for readability
+
+* The Go Playground
+.link https://play.golang.org/
+- The Go Playground allows you to compile and run Go code in a sandbox
+- Limit is that it only imports standard packages
+
+* Packages
+- There's no ideal "size" for a package
+- Simple to use and import (so long as you know your $GOPATH)
+- Capitalized declarations = exportable
+.code code/export.go
+
+* Hello, World!
+.code code/hello_world.go
+- fmt is the package from the standard library for formatting I/O operations
+
+* Variable Assignment
+.code code/assignment.go
+- := is the shortened syntax for variable declaration
+- Type inference
+
+* Functions
+.code code/function.go
+- Type declarations come after the variable name because Go wants to be different than everyone else
+- If arguments are the same type, can shorten the type declarations
+- Explicit returns
+
+* Multiple Returns, Multiple Assigns
+.code code/multiple_returns.go
+
+* Conditionals
+.code code/conditions.go
+- Your basic if/else
+- No ternaries
+
+* Loops
+.code code/loops.go
+- Only for loops
+
+* Slices, Arrays
+.code code/slice.go
+- Arrays specify a length
+- Slices have no specified length
+
+* Maps
+.code code/maps.go
+
+* Pointers
+.code code/pointers.go
+- Pointers hold reference to value in memory
+- This is honestly about as complex as it gets with pointers in Go
+
+* Structs
+.code code/structs.go
+- Class-like
+- No inheritance
+
+* Methods on Structs
+.code code/methods.go
+
+* Interfaces
+.code code/interfaces.go
+
+* Now that all the usual stuff is out of the way, here are the things that bit me...
+
+* Trailing Commas!
+.code code/trailing_commas.go
+- Seriously, what's with the trailing commas?
+
+* interface{} vs Interfaces
+.code code/interface_type.go
+
+* Interface When You Can
+- Interfaces are Go's bread and butter for composition
+- Code flexibility
+.code code/interfacing_is_important.go
+
+* Handling JSON/YAML
+- Working with JSON/YAML takes some getting used to...
+- Requires some prior knowledge of the field structure
+.code code/marshal_json.go
+
+* Struct Tags
+- Metadata about a field on a struct
+.code code/struct_tags.go
+- You can do this for YAML, BSON, etc.
+
+* Errors
+- Error handling is very simple... which sometimes means a lot of if err != nil checks
+.code code/errors.go
+
+* To Panic, Or Not to Panic?
+.code code/panic.go
+- Calling panic will stop executing a function, return, and propagate up the stack until the program crashes
+- You should explicitly handle error cases and only panic when your program really can't continue to run
+
+* TDD - Table Driven Development
+.code code/tdd.go
+- Idiomatic unit tests are by iterating over table entries
+.link https://github.com/onsi/ginkgo Ginkgo
+
+* Idiomatic Go?
+- Community values simplicity
+- What that really means is they eschew web and testing frameworks...
+
+* Additional Readings/Resources
+.link https://tour.golang.org/welcome/1 A Tour of Go
+.link https://github.com/golang/go/wiki/GoTalks Excellent Go Talks
