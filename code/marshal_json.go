@@ -9,7 +9,6 @@ data = {
 	"body": "herp"
 }
 */
-
 type Response struct {
 	Status string `json:"status"`
 	Code   string `json:"code"`
@@ -19,6 +18,4 @@ type Response struct {
 func main() {
 	res := &Response{}
 	json.Unmarshal(data, res)
-
-	// Now you can interact with the data as a struct
 }

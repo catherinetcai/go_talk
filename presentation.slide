@@ -1,5 +1,5 @@
 Getting Going With Go
-Things I'd Wish Someone Had Taught Me About Go
+Things I wish I had been taught about Go as an ex-Rubyist
 17 Aug 2017
 Tags: golang
 
@@ -141,8 +141,7 @@ http://www.cathuselah.net
 .code code/interfacing_is_important.go
 
 * Handling JSON/YAML
-- Working with JSON/YAML takes some getting used to...
-- Requires some prior knowledge of the field structure
+- Working with JSON/YAML requires some knowledge of the field structure
 .code code/marshal_json.go
 
 * Struct Tags

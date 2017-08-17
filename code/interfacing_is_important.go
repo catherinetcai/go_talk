@@ -8,15 +8,11 @@ type CloudProvider interface {
 
 type AWS struct{}
 
-func (a *AWS) Type() string {
-	return "aws"
-}
+func (a *AWS) Type() string { return "aws" }
 
 type GCE struct{}
 
-func (g *GCE) Type() string {
-	return "gce"
-}
+func (g *GCE) Type() string { return "gce" }
 
 func PrintType(c CloudProvider) {
 	fmt.Println(c.Type())

@@ -1,5 +1,3 @@
-package main
-
 import "testing"
 
 var flagtests = []struct {
@@ -8,16 +6,6 @@ var flagtests = []struct {
 }{
 	{"%a", "[%a]"},
 	{"%-a", "[%-a]"},
-	{"%+a", "[%+a]"},
-	{"%#a", "[%#a]"},
-	{"% a", "[% a]"},
-	{"%0a", "[%0a]"},
-	{"%1.2a", "[%1.2a]"},
-	{"%-1.2a", "[%-1.2a]"},
-	{"%+1.2a", "[%+1.2a]"},
-	{"%-+1.2a", "[%+-1.2a]"},
-	{"%-+1.2abc", "[%+-1.2a]bc"},
-	{"%-1.2abc", "[%-1.2a]bc"},
 }
 
 func TestFlagParser(t *testing.T) {
