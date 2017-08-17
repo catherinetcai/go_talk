@@ -96,14 +96,33 @@ http://www.cathuselah.net
 * Interfaces
 .code code/interfaces.go
 
+
 * Now that all the usual stuff is out of the way, here are the things that bit me...
+
+* Goroutines/Concurrency
+.code code/concurrency.go
+- This runs the hello_world() function in one goroutine and the main fmt.Println in a main
+- Except... this doesn't do what you expect
+- You'll see "Main" printed, but "Hello world!" never prints...
+
+* Waiting on Concurrency...
+- The goroutine will be executed, but the main function doesn't wait for the goroutine to complete. It runs "Main" and exits, so "Hello world!" never gets a chance to print
+- Go has waitgroups to wait for goroutines to finish
+.code code/wait_group.go
 
 * Trailing Commas!
 .code code/trailing_commas.go
 - Seriously, what's with the trailing commas?
 
+* Cross Compile Binaries
+.code code/binaries.sh
+- Go compiles down into binaries
+- Setting the GOOS and GOARCH environment variables allows you to cross-compile the binaries (ex: for Linux if you're on Mac)
+- Ran into this issue when running on Mac and putting a binary into Docker
+
 * interface{} vs Interfaces
 .code code/interface_type.go
+- interface{} is the closest you're going to get to generics
 
 * Interface When You Can
 - Interfaces are Go's bread and butter for composition
@@ -137,6 +156,7 @@ http://www.cathuselah.net
 * Idiomatic Go?
 - Community values simplicity
 - What that really means is they eschew web and testing frameworks...
+- Overall, extremely friendly community that's extremely active
 
 * Additional Readings/Resources
 .link https://tour.golang.org/welcome/1 A Tour of Go

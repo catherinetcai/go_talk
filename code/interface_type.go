@@ -11,4 +11,12 @@ func main() {
 
 	// This will panic, because
 	foo.(int)
+
+	switch foo.(type) {
+	case string:
+		// stuff
+	case int:
+		// more stuff
+	default:
+	}
 }
