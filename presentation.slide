@@ -29,6 +29,12 @@ http://www.cathuselah.net
 
 * Lay of the Tooling Land
 - $GOPATH and drawbacks
+.image images/gopath.png 
+
+* Lay of the Tooling Land - GOPATH
+.code code/gopath.go
+
+* Lay of the Tooling Land - cont.
 - GoDocs are amazing [[https://godoc.org/fmt]] 
 .code code/godoc.go
 - Dependency management leaves a lot to be desired [[https://github.com/kardianos/govendor]]
@@ -39,15 +45,21 @@ http://www.cathuselah.net
 - The Go Playground allows you to compile and run Go code in a sandbox
 - Limit is that it only imports standard packages
 
-* Packages
+* Hello, World!
+.code code/hello_world.go
+- fmt is the package from the standard library for formatting I/O operations
+
+* Packages 
+- Logical grouping of code
 - There's no ideal "size" for a package
 - Simple to use and import (so long as you know your $GOPATH)
 - Capitalized declarations = exportable
 .code code/export.go
 
-* Hello, World!
-.code code/hello_world.go
-- fmt is the package from the standard library for formatting I/O operations
+* Packages - Remote packages
+- Get from remote path
+.code code/goget.sh
+.code code/gopath.go
 
 * Variable Assignment
 .code code/assignment.go
@@ -95,7 +107,6 @@ http://www.cathuselah.net
 
 * Interfaces
 .code code/interfaces.go
-
 
 * Now that all the usual stuff is out of the way, here are the things that bit me...
 
@@ -161,3 +172,4 @@ http://www.cathuselah.net
 * Additional Readings/Resources
 .link https://tour.golang.org/welcome/1 A Tour of Go
 .link https://github.com/golang/go/wiki/GoTalks Excellent Go Talks
+.link https://www.cathuselah.net Shameless Plug of My Blog 
