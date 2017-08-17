@@ -125,6 +125,10 @@ http://www.cathuselah.net
 .code code/trailing_commas.go
 - Seriously, what's with the trailing commas?
 
+* Blank Identifiers
+- Since there are multiple return types, you can use a blank identifier _ to ignore things you don't care about
+.code code/blank_identifiers.go
+
 * Cross Compile Binaries
 .code code/binaries.sh
 - Go compiles down into binaries
@@ -150,7 +154,7 @@ http://www.cathuselah.net
 - You can do this for YAML, BSON, etc.
 
 * Errors
-- Error handling is very simple... which sometimes means a lot of if err != nil checks
+- Error handling is very simple, but do error handling at the highest level you can
 .code code/errors.go
 
 * To Panic, Or Not to Panic?
