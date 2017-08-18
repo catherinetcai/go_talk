@@ -8,4 +8,7 @@ func main() {
 	for k, v := range x {
 		fmt.Println(k, v)
 	}
+
+	// Ok will tell you if the value exists
+	y, ok := x["hello"]
 }
